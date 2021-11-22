@@ -3,22 +3,19 @@ import Cards from "./components/Cards";
 import Modal from "./components/Modal";
 
 function App() {
+  let product_name = ["Bat", "Ball", "home"];
+
   return (
     <div>
       <Navbar />
       <div className="row">
-        <div className="col-md-3">
-          <Cards />
-        </div>
-        <div className="col-md-3">
-          <Cards />
-        </div>
-        <div className="col-md-3">
-          <Cards />
-        </div>
-        <div className="col-md-3">
-          <Cards />
-        </div>
+        {product_name.map((product) => {
+          return (
+            <div className="col-md-4">
+              <Cards name={product} />
+            </div>
+          );
+        })}
       </div>
 
       <button
